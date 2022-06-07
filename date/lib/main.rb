@@ -32,14 +32,18 @@ class Farm
   end
 
   def total_plant_heights
-    total = 0
+    heights = plant_heights
+    result = (0).upto(heights.size).collect { |i| heights[i] }.join("")
+  end
+
+  def plant_heights
+    heights = []
     plots.each do |plot|
-      # Remove the plot name before iterating over the plants.
       plot.drop(1).each do |plant|
-        total += plant[1]
+        heights += plant[1]
       end
     end
-    total
+    heights
   end
 
 end
