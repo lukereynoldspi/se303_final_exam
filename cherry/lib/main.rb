@@ -31,9 +31,5 @@ end
 
 def repeat
   data = ["This", "is", "the", "data", "to", "use"]
-  result = ""
-  (0..5).each do |i|
-    result += data[i]
-  end
-  result
+  result = (0).upto(5).collect { |i| data[i] }.join("")
 end
